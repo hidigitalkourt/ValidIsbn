@@ -20,7 +20,7 @@ namespace ValidIsbnTest
         [Fact]
         public void ReturnTrueForValidIsbnNoSpaces()
         {
-            var isbnInput = "0471958697";
+            var isbnInput = "9780470059029";
             var expected = true;
             var actual = ValidateIsbn.IsValidIsbn(isbnInput);
 
@@ -29,9 +29,9 @@ namespace ValidIsbnTest
         }
 
         [Fact]
-        public void ReturnFalseForIsbnLengthNotEqualTen()
+        public void ReturnFalseForIsbnLengthNotEqualThirteen()
         {
-            var isbnInput = "04719586970";
+            var isbnInput = "97804700590298";
             var expected = false;
             var actual = ValidateIsbn.IsValidIsbn(isbnInput);
 
