@@ -27,5 +27,16 @@ namespace ValidIsbnTest
             actual.Should().Be(expected);
             
         }
+
+        [Fact]
+        public void ReturnFalseForIsbnLengthNotEqualTen()
+        {
+            var isbnInput = "04719586970";
+            var expected = false;
+            var actual = ValidateIsbn.IsValidIsbn(isbnInput);
+
+            actual.Should().Be(expected);
+            
+        }
     }
 }
