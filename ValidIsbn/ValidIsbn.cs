@@ -5,8 +5,12 @@ namespace ValidIsbn
     public static class ValidateIsbn
     {
         public static bool IsValidIsbn(string isbn)
-        {
-            return false;
+        {   
+            if( isbn == null || isbn == "")
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
