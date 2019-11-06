@@ -10,6 +10,10 @@ namespace ValidIsbn
             {
                 return false;
             }
+            if( isbn.Length != 10)
+            {
+                return false;
+            }
             return true;
         }
     }
