@@ -7,27 +7,18 @@ namespace ValidIsbn
     {
         public static bool IsValidIsbn(string isbn)
         {   
-            var isbnCharList = new string []{};
-            string processedIsbn;
-            if( isbn == null || isbn == "")
-            {
-                return false;
-            }
             if( isbn.Contains("-"))
             {
-                isbnCharList = isbn.Split('-');
-                processedIsbn = String.Join("",isbnCharList);
-                if (processedIsbn.Length != 13) 
-                {
-                    return false;
-                }
-                return true;
+                var isbnCharList = isbn.Split('-');
+                string processedIsbn = String.Join("",isbnCharList);
+                return IsLengthThirteen(processedIsbn);
             } 
-            if( isbn.Length != 13)
-            {
-                return false;
-            }
-            return true;
+            return IsLengthThirteen(isbn);
+        }
+
+        private static bool IsLengthThirteen(string isbn)
+        {
+            return isbn.Length != 13 ? false : true;
         }
     }
 }
