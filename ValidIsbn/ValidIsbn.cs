@@ -13,6 +13,12 @@ namespace ValidIsbn
                 string processedIsbn = String.Join("",isbnCharList);
                 return IsLengthThirteen(processedIsbn);
             } 
+            if( isbn.Contains(" "))
+            {
+                var isbnCharList = isbn.Split(' ');
+                string processedIsbn = String.Join("",isbnCharList);
+                return IsLengthThirteen(processedIsbn);
+            }
             return IsLengthThirteen(isbn);
         }
 
