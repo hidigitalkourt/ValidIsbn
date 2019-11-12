@@ -40,9 +40,20 @@ namespace ValidIsbnTest
         }
 
         [Fact]
-        public void ReturnTrueForIsbnLengthOfThirteenIfDisregadDashes()
+        public void ReturnTrueForIsbnLengthOfThirteenWithDashes()
         {
             var isbnInput = "978-0-262-13472-9";
+            var expected = true;
+            var actual = ValidateIsbn.IsValidIsbn(isbnInput);
+
+            actual.Should().Be(expected);
+            
+        }
+
+          [Fact]
+        public void ReturnTrueForIsbnLengthOfThirteenWithExtraSpaces()
+        {
+            var isbnInput = "978 0 262 13472 9";
             var expected = true;
             var actual = ValidateIsbn.IsValidIsbn(isbnInput);
 
