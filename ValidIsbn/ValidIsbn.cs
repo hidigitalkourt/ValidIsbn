@@ -34,5 +34,21 @@ namespace ValidIsbn
             }
             return processedIsbn;
         }
+
+        private static string HasValidCheckDigit(string isbn)
+        {
+            var index = 0;
+            var multipledIntegers = 0;
+            int numberIsbn = int.Parse(isbn);
+            foreach ( int ch in isbn)
+            {
+                index ++;
+                if ( index % 2 == 0)
+                {
+
+                }
+            }
+            return  multipledIntegers.ToString();
+        }
     }
 }
