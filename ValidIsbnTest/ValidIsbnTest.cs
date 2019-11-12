@@ -16,7 +16,7 @@ namespace ValidIsbnTest
 
             actual.Should().Be(expected);
         }
-        
+
         [Fact]
         public void ReturnTrueForValidIsbnNoSpaces()
         {
@@ -25,7 +25,7 @@ namespace ValidIsbnTest
             var actual = ValidateIsbn.IsValidIsbn(isbnInput);
 
             actual.Should().Be(expected);
-            
+
         }
 
         [Fact]
@@ -36,7 +36,7 @@ namespace ValidIsbnTest
             var actual = ValidateIsbn.IsValidIsbn(isbnInput);
 
             actual.Should().Be(expected);
-            
+
         }
 
         [Fact]
@@ -47,10 +47,10 @@ namespace ValidIsbnTest
             var actual = ValidateIsbn.IsValidIsbn(isbnInput);
 
             actual.Should().Be(expected);
-            
+
         }
 
-          [Fact]
+        [Fact]
         public void ReturnTrueForIsbnLengthOfThirteenWithExtraSpaces()
         {
             var isbnInput = "978 0 262 13472 9";
@@ -58,7 +58,7 @@ namespace ValidIsbnTest
             var actual = ValidateIsbn.IsValidIsbn(isbnInput);
 
             actual.Should().Be(expected);
-            
+
         }
     }
 }
