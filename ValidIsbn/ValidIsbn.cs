@@ -10,7 +10,7 @@ namespace ValidIsbn
             var reducedIsbn = ReducedIsbn(isbn);
             var checkedLengthIsbn = IsLengthThirteen(reducedIsbn);
 
-            return checkedLengthIsbn == null ? false : true;
+            return checkedLengthIsbn == null ? false : HasValidCheckDigit(checkedLengthIsbn);
         }
 
         private static string IsLengthThirteen(string isbn)
@@ -23,20 +23,22 @@ namespace ValidIsbn
             return isbn.Replace("-","").Replace(" ","");
         }
 
-        private static string HasValidCheckDigit(string isbn)
+        private static bool HasValidCheckDigit(string isbn)
         {
             var index = 0;
-            var multipledIntegers = 0;
-            int numberIsbn = int.Parse(isbn);
-            foreach ( int ch in isbn)
+            var aggregatedIntegers = 0;
+            while (index < 13)
             {
-                index ++;
-                if ( index % 2 == 0)
+                index++;
+                foreach (char ch in isbn)
                 {
-
+                    int num = int.Parse(Char.ToString(ch));
+                    aggregatedIntegers += index % 2 == 0 ? num * 3 : num;
                 }
             }
-            return  multipledIntegers.ToString();
+            var checkDigit = (10 - (aggregatedIntegers % 10)) % 10;
+            var lastDigit = isbn[12];
+            return checkDigit.ToString() == lastDigit.ToString() ? true : false;
         }
     }
 }

@@ -44,20 +44,4 @@ if that is a valid ISBN-13 and false otherwise.
 Advanced task:
 Also return true if the string is a valid ISBN-10.
 
-  private static bool HasValidCheckDigit(string isbn)
-        {
-            var index = 0;
-            var aggregatedIntegers = 0;
-            while (index < 13)
-            {
-                index++;
-                foreach (char ch in isbn)
-                {
-                    int num = int.Parse(Char.ToString(ch));
-                    aggregatedIntegers += index % 2 == 0 ? num * 3 : num;
-                }
-            }
-            var checkDigit = (10 - (aggregatedIntegers % 10)) % 10;
-            var lastDigit = int.Parse(isbn.Substring(13));
-            return checkDigit == lastDigit ? true : false;
-        }
+ 
