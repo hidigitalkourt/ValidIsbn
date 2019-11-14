@@ -20,19 +20,7 @@ namespace ValidIsbn
 
         private static string ReducedIsbn(string isbn)
         {
-            var isbnCharList = new string[] { };
-            string processedIsbn = isbn;
-            if (isbn.Contains("-"))
-            {
-                isbnCharList = isbn.Split('-');
-                processedIsbn = String.Join("", isbnCharList);
-            }
-            if (isbn.Contains(" "))
-            {
-                isbnCharList = isbn.Split(' ');
-                processedIsbn = String.Join("", isbnCharList);
-            }
-            return processedIsbn;
+            return isbn.Replace("-","").Replace(" ","");
         }
 
         private static string HasValidCheckDigit(string isbn)
