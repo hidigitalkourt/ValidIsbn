@@ -20,9 +20,28 @@ namespace ValidIsbn
 
         private static string ReducedIsbn(string isbn)
         {
-            return isbn.Replace("-","").Replace(" ","");
+            return isbn.Replace("-", "").Replace(" ", "");
         }
 
-        
+        public static int SumsAlternatingMulitpliersOfDigits(string isbn)
+        {
+            var reduced = ReducedIsbn(isbn);
+            IsLengthThirteen(reduced);
+            var index = 1;
+            var sumDigits = 0;
+
+            foreach (char ch in reduced)
+            {
+                if (index < 13)
+                {
+                    int num = int.Parse(Char.ToString(ch));
+                    sumDigits += ((index % 2) == 0) ? (num * 3) : num;
+                }
+                index++;
+            }
+            return sumDigits;
+        }
+
+
     }
 }
