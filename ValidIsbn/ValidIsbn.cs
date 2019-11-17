@@ -25,12 +25,10 @@ namespace ValidIsbn
 
         public static int SumsAlternatingMulitpliersOfDigits(string isbn)
         {
-            var reduced = ReducedIsbn(isbn);
-            IsLengthThirteen(reduced);
             var index = 1;
             var sumDigits = 0;
 
-            foreach (char ch in reduced)
+            foreach (char ch in isbn)
             {
                 if (index < 13)
                 {
