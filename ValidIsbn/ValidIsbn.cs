@@ -40,11 +40,15 @@ namespace ValidIsbn
             return sumDigits;
         }
 
-        public static int ModulusTenOfResult( string isbn)
+        public static int ModulusTenOfResult(string isbn)
         {
-           return SumsAlternatingMulitpliersOfDigits(isbn) % 10;
+            return SumsAlternatingMulitpliersOfDigits(isbn) % 10;
         }
 
+        public static int ModulusTenOfSubtractedResult(string isbn)
+        {
+            return 0;
+        }
 
     }
 }

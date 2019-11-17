@@ -84,6 +84,15 @@ namespace ValidIsbnTest
 
         }
 
+        [Fact]
         
+        public void ReturnsModuloOfResultSubtractedFromTen()
+        {
+            var isbnInput = "9780262134729";
+            var expected = (10 - (91 % 10)) % 10;
+            var actual = ValidateIsbn.ModulusTenOfSubtractedResult(isbnInput);
+
+            actual.Should().Be(expected);
+        }
     }
 }
