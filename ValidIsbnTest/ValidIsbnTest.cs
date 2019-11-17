@@ -23,7 +23,7 @@ namespace ValidIsbnTest
             var isbnInput = "9780470059029";
             var expected = true;
             var actual = ValidateIsbn.IsValidIsbn(isbnInput);
-
+ 
             actual.Should().Be(expected);
 
         }
