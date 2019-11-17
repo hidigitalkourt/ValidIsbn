@@ -47,7 +47,7 @@ namespace ValidIsbn
 
         public static int ModulusTenOfSubtractedResult(string isbn)
         {
-            return 0;
+            return (10 - ModulusTenOfResult(isbn)) % 10;
         }
 
     }
