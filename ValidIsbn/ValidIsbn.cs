@@ -7,15 +7,15 @@ namespace ValidIsbn
     {
         public static bool IsValidIsbn(string isbn)
         {
-            var reducedIsbn = ReducedIsbn(isbn);
-            var checkedLengthIsbn = IsLengthThirteen(reducedIsbn);
-
-            return checkedLengthIsbn == null ? false : true;
+            return
+                IsLengthThirteen(ReducedIsbn(isbn)) &&
+                HasValidCheckDigitForLengthThirteen(ReducedIsbn(isbn))
+                ? true : false;
         }
 
-        private static string IsLengthThirteen(string isbn)
+        private static bool IsLengthThirteen(string isbn)
         {
-            return isbn.Length != 13 ? null : isbn;
+            return isbn.Length != 13 ? false : true;
         }
 
         private static string ReducedIsbn(string isbn)
@@ -40,15 +40,11 @@ namespace ValidIsbn
             return sumDigits;
         }
 
-        public static int ModulusTenOfResult(string isbn)
+        public static bool HasValidCheckDigitForLengthThirteen(string isbn)
         {
-            return SumsAlternatingMulitpliersOfDigits(isbn) % 10;
+            var checkDigit = (10 - (SumsAlternatingMulitpliersOfDigits(isbn) % 10)) % 10;
+            var lastDigit = isbn[12];
+            return checkDigit.ToString() == lastDigit.ToString() ? true : false;
         }
-
-        public static int ModulusTenOfSubtractedResult(string isbn)
-        {
-            return (10 - ModulusTenOfResult(isbn)) % 10;
-        }
-
     }
 }
