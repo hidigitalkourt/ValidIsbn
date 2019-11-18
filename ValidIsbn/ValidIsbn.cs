@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ValidIsbn
 {
-    public static class ValidateIsbn
+    public static class IsbnValidator
     {
         public static bool IsValidIsbn(string isbn)
         {

@@ -12,7 +12,7 @@ namespace ValidIsbnTest
         {
             var isbnInput = "";
             var expected = false;
-            var actual = ValidateIsbn.IsValidIsbn(isbnInput);
+            var actual = IsbnValidator.IsValidIsbn(isbnInput);
 
             actual.Should().Be(expected);
         }
@@ -22,7 +22,7 @@ namespace ValidIsbnTest
         {
             var isbnInput = "9780470059029";
             var expected = true;
-            var actual = ValidateIsbn.IsValidIsbn(isbnInput);
+            var actual = IsbnValidator.IsValidIsbn(isbnInput);
 
             actual.Should().Be(expected);
 
@@ -33,7 +33,7 @@ namespace ValidIsbnTest
         {
             var isbnInput = "97804700590298";
             var expected = false;
-            var actual = ValidateIsbn.IsValidIsbn(isbnInput);
+            var actual = IsbnValidator.IsValidIsbn(isbnInput);
 
             actual.Should().Be(expected);
 
@@ -44,7 +44,7 @@ namespace ValidIsbnTest
         {
             var isbnInput = "978-0-262-13472-9";
             var expected = true;
-            var actual = ValidateIsbn.IsValidIsbn(isbnInput);
+            var actual = IsbnValidator.IsValidIsbn(isbnInput);
 
             actual.Should().Be(expected);
 
@@ -55,7 +55,7 @@ namespace ValidIsbnTest
         {
             var isbnInput = "978 0 262 13472 9";
             var expected = true;
-            var actual = ValidateIsbn.IsValidIsbn(isbnInput);
+            var actual = IsbnValidator.IsValidIsbn(isbnInput);
 
             actual.Should().Be(expected);
 
@@ -66,7 +66,7 @@ namespace ValidIsbnTest
         {
             var isbnInput = "9780262134723";
             var expected = false;
-            var actual = ValidateIsbn.IsValidIsbn(isbnInput);
+            var actual = IsbnValidator.IsValidIsbn(isbnInput);
 
             actual.Should().Be(expected);
         }
