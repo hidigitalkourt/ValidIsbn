@@ -23,26 +23,26 @@ namespace ValidIsbn
             return isbn.Replace("-", "").Replace(" ", "");
         }
 
-        public static int SumsAlternatingMulitpliersOfDigits(string isbn)
+        private static int GetSumOfDigitsWithAlternatingMultiplier(string isbn)
         {
             var index = 1;
-            var sumDigits = 0;
+            var sum = 0;
 
             foreach (char ch in isbn)
             {
                 if (index < 13)
                 {
                     int num = int.Parse(Char.ToString(ch));
-                    sumDigits += ((index % 2) == 0) ? (num * 3) : num;
+                    sum += ((index % 2) == 0) ? (num * 3) : num;
                 }
                 index++;
             }
-            return sumDigits;
+            return sum;
         }
 
         public static bool HasValidCheckDigitForLengthThirteen(string isbn)
         {
-            var checkDigit = (10 - (SumsAlternatingMulitpliersOfDigits(isbn) % 10)) % 10;
+            var checkDigit = (10 - (GetSumOfDigitsWithAlternatingMultiplier(isbn) % 10)) % 10;
             var lastDigit = isbn[12];
             return checkDigit.ToString() == lastDigit.ToString() ? true : false;
         }

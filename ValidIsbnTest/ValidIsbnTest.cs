@@ -10,9 +10,9 @@ namespace ValidIsbnTest
         [Fact]
         public void ReturnFalseForEmptyIsbn()
         {
-            var isbnInput = "";
+            var isbn = "";
             var expected = false;
-            var actual = IsbnValidator.IsValidIsbn(isbnInput);
+            var actual = IsbnValidator.IsValidIsbn(isbn);
 
             actual.Should().Be(expected);
         }
@@ -20,9 +20,9 @@ namespace ValidIsbnTest
         [Fact]
         public void ReturnTrueForValidIsbnNoSpaces()
         {
-            var isbnInput = "9780470059029";
+            var isbn = "9780470059029";
             var expected = true;
-            var actual = IsbnValidator.IsValidIsbn(isbnInput);
+            var actual = IsbnValidator.IsValidIsbn(isbn);
 
             actual.Should().Be(expected);
 
@@ -31,9 +31,9 @@ namespace ValidIsbnTest
         [Fact]
         public void ReturnFalseForIsbnLengthNotEqualThirteen()
         {
-            var isbnInput = "97804700590298";
+            var isbn = "97804700590298";
             var expected = false;
-            var actual = IsbnValidator.IsValidIsbn(isbnInput);
+            var actual = IsbnValidator.IsValidIsbn(isbn);
 
             actual.Should().Be(expected);
 
@@ -42,9 +42,9 @@ namespace ValidIsbnTest
         [Fact]
         public void ReturnTrueForIsbnLengthOfThirteenWithDashes()
         {
-            var isbnInput = "978-0-262-13472-9";
+            var isbn = "978-0-262-13472-9";
             var expected = true;
-            var actual = IsbnValidator.IsValidIsbn(isbnInput);
+            var actual = IsbnValidator.IsValidIsbn(isbn);
 
             actual.Should().Be(expected);
 
@@ -53,9 +53,9 @@ namespace ValidIsbnTest
         [Fact]
         public void ReturnTrueForIsbnLengthOfThirteenWithExtraSpaces()
         {
-            var isbnInput = "978 0 262 13472 9";
+            var isbn = "978 0 262 13472 9";
             var expected = true;
-            var actual = IsbnValidator.IsValidIsbn(isbnInput);
+            var actual = IsbnValidator.IsValidIsbn(isbn);
 
             actual.Should().Be(expected);
 
@@ -64,9 +64,9 @@ namespace ValidIsbnTest
         [Fact]
         public void ReturnsFalseForInvalidCheckDigit()
         {
-            var isbnInput = "9780262134723";
+            var isbn = "9780262134723";
             var expected = false;
-            var actual = IsbnValidator.IsValidIsbn(isbnInput);
+            var actual = IsbnValidator.IsValidIsbn(isbn);
 
             actual.Should().Be(expected);
         }
