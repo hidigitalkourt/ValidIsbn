@@ -7,6 +7,7 @@ namespace ValidIsbnTest
 {
     public class DigitCheckerTest
     {
+        [Fact]
         public void ReturnsSumOfIsbnDigitsAlternatelyMulitipliedByOneOrThree()
         {
             //   131 3 131 31313
