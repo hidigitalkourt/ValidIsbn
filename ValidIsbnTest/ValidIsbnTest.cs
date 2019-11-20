@@ -60,15 +60,5 @@ namespace ValidIsbnTest
             actual.Should().Be(expected);
 
         }
-
-        [Fact]
-        public void ReturnsFalseForInvalidCheckDigit()
-        {
-            var isbn = "9780262134723";
-            var expected = false;
-            var actual = IsbnValidator.IsValidIsbn(isbn);
-
-            actual.Should().Be(expected);
-        }
     }
 }
