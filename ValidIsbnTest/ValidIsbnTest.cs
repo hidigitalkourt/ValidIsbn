@@ -60,5 +60,18 @@ namespace ValidIsbnTest
             actual.Should().Be(expected);
 
         }
+
+        [Fact]
+        public void ReturnTrueForValidLengthTen()
+        {
+            var isbn = "0471958697";
+            var expected = true;
+            var actual = IsbnValidator.IsValidIsbn(isbn);
+
+            actual.Should().Be(expected);
+
+        }
+
+
     }
 }
