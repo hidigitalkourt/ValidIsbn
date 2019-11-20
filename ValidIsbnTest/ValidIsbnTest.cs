@@ -29,7 +29,7 @@ namespace ValidIsbnTest
         }
 
         [Fact]
-        public void ReturnFalseForIsbnLengthNotEqualThirteen()
+        public void ReturnFalseForInvalidLength()
         {
             var isbn = "97804700590298";
             var expected = false;
