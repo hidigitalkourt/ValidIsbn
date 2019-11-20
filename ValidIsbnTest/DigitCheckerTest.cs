@@ -32,7 +32,7 @@ namespace ValidIsbnTest
         public void ReturnsSumOfDigitsMultipliedByItsIndex()
         {
             var isbn = "0471606952";
-            var expected = (0 * 1) + (4 * 2) + (7 * 3) + (1 * 4) + (6 * 5) + (0 * 6) + (9 * 7) + (5 * 8);
+            var expected = (0 * 1) + (4 * 2) + (7 * 3) + (1 * 4) + (6 * 5) + (0 * 6) + (6 * 7) + (9 * 8) + (5 * 9);
             var actual = DigitChecker.GetSumOfMultipliedDigitsByPosition(isbn);
 
             actual.Should().Be(expected);

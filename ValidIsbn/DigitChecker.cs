@@ -35,7 +35,19 @@ namespace ValidIsbn
 
         public static int GetSumOfMultipliedDigitsByPosition(string isbn)
         {
-            return 0;
+            var index = 1;
+            var sum = 0;
+
+            foreach (char ch in isbn)
+            {
+                if (index < 10)
+                {
+                    int num = int.Parse(Char.ToString(ch));
+                    sum += (index * num);
+                }
+                index++;
+            }
+            return sum;
         }
     }
     
