@@ -6,7 +6,11 @@ namespace ValidIsbn
     public static class DigitChecker
     {
         public static bool HasValidCheckDigitForLengthThirteen(string isbn)
-        {
+        {   
+            if(isbn.Length == 10)
+            {
+                return true;
+            }
             var checkDigit = (10 - (GetSumOfMultipliedDigits(isbn) % 10)) % 10;
             var lastDigit = isbn[12];
             return checkDigit.ToString() == lastDigit.ToString();

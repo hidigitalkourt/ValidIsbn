@@ -7,12 +7,12 @@ namespace ValidIsbn
     {
         public static bool IsValidIsbn(string isbn)
         {
-            return IsLengthThirteen(ReducedIsbn(isbn)) && DigitChecker.HasValidCheckDigitForLengthThirteen(ReducedIsbn(isbn));
+            return IsLengthValid(ReducedIsbn(isbn)) && DigitChecker.HasValidCheckDigitForLengthThirteen(ReducedIsbn(isbn));
         }
 
-        private static bool IsLengthThirteen(string isbn)
+        private static bool IsLengthValid(string isbn)
         {
-            return isbn.Length == 13;
+            return isbn.Length == 13 || isbn.Length == 10;
         }
 
         private static string ReducedIsbn(string isbn)
