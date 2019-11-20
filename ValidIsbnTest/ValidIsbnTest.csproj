@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ThirteenDigitIsbnValidator\ThirteenDigitIsbnValidator.csproj" />
+    <ProjectReference Include="..\ValidIsbn\ValidIsbn.csproj" />
   </ItemGroup>
 
 </Project>

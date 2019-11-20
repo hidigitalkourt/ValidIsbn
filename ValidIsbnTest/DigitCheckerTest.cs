@@ -1,9 +1,9 @@
 using System;
 using Xunit;
-using ThirteenDigitIsbnValidator;
+using ValidIsbn;
 using FluentAssertions;
 
-namespace ThirteenDigitIsbnValidatorTest
+namespace ValidIsbnTest
 {
     public class DigitCheckerTest
     {

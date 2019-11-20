@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ThirteenDigitIsbnValidator
+namespace ValidIsbn
 {
     public static class IsbnValidator
     {
-        public static bool IsThirteenDigitIsbnValidator(string isbn)
+        public static bool IsValidIsbn(string isbn)
         {
             return IsLengthThirteen(ReducedIsbn(isbn)) && DigitChecker.HasValidCheckDigitForLengthThirteen(ReducedIsbn(isbn));
         }
