@@ -7,12 +7,12 @@ namespace ValidIsbn
     {
         public static bool HasValidCheckDigitForLengthThirteen(string isbn)
         {
-            var checkDigit = (10 - (GetSumOfDigitsWithAlternatingMultiplier(isbn) % 10)) % 10;
+            var checkDigit = (10 - (GetSumOfMultipliedDigits(isbn) % 10)) % 10;
             var lastDigit = isbn[12];
             return checkDigit.ToString() == lastDigit.ToString();
         }     
 
-        public static int GetSumOfDigitsWithAlternatingMultiplier(string isbn)
+        public static int GetSumOfMultipliedDigits(string isbn)
         {
             var index = 1;
             var sum = 0;
