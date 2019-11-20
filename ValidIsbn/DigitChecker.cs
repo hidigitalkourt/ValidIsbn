@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ValidIsbn
+namespace ThirteenDigitIsbnValidator
 {
     public static class DigitChecker
     {

@@ -1,28 +1,28 @@
 using System;
 using Xunit;
-using ValidIsbn;
+using ThirteenDigitIsbnValidator;
 using FluentAssertions;
 
-namespace ValidIsbnTest
+namespace ThirteenDigitIsbnValidatorTest
 {
-    public class ValidIsbnTest
+    public class ThirteenDigitIsbnValidatorTest
     {
         [Fact]
         public void ReturnFalseForEmptyIsbn()
         {
             var isbn = "";
             var expected = false;
-            var actual = IsbnValidator.IsValidIsbn(isbn);
+            var actual = IsbnValidator.IsThirteenDigitIsbnValidator(isbn);
 
             actual.Should().Be(expected);
         }
 
         [Fact]
-        public void ReturnTrueForValidIsbnNoSpaces()
+        public void ReturnTrueForThirteenDigitIsbnValidatorNoSpaces()
         {
             var isbn = "9780470059029";
             var expected = true;
-            var actual = IsbnValidator.IsValidIsbn(isbn);
+            var actual = IsbnValidator.IsThirteenDigitIsbnValidator(isbn);
 
             actual.Should().Be(expected);
 
@@ -33,7 +33,7 @@ namespace ValidIsbnTest
         {
             var isbn = "97804700590298";
             var expected = false;
-            var actual = IsbnValidator.IsValidIsbn(isbn);
+            var actual = IsbnValidator.IsThirteenDigitIsbnValidator(isbn);
 
             actual.Should().Be(expected);
 
@@ -44,7 +44,7 @@ namespace ValidIsbnTest
         {
             var isbn = "978-0-262-13472-9";
             var expected = true;
-            var actual = IsbnValidator.IsValidIsbn(isbn);
+            var actual = IsbnValidator.IsThirteenDigitIsbnValidator(isbn);
 
             actual.Should().Be(expected);
 
@@ -55,7 +55,7 @@ namespace ValidIsbnTest
         {
             var isbn = "978 0 262 13472 9";
             var expected = true;
-            var actual = IsbnValidator.IsValidIsbn(isbn);
+            var actual = IsbnValidator.IsThirteenDigitIsbnValidator(isbn);
 
             actual.Should().Be(expected);
 
