@@ -32,6 +32,11 @@ namespace ValidIsbn
             }
             return sum;
         }   
+
+        public static int GetSumOfMultipliedDigitsByPosition(string isbn)
+        {
+            return 0;
+        }
     }
     
 }

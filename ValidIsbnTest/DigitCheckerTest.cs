@@ -27,5 +27,17 @@ namespace ValidIsbnTest
 
             actual.Should().Be(expected);
         }
+
+        [Fact]
+        public void ReturnsSumOfDigitsMultipliedByItsIndex()
+        {
+            var isbnInput = "0471606952";
+            var expected = (0 * 1) + (4 * 2) + (7 * 3) + (1 * 4) + (6 * 5) + (0 * 6) + (9 * 7) + (5 * 8);
+            var actual = DigitChecker.GetSumOfMultipliedDigitsByPosition(isbnInput);
+
+            actual.Should().Be(expected);
+
+        }
+
     }
 }
