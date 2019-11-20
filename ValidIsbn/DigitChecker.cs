@@ -23,32 +23,22 @@ namespace ValidIsbn
 
             foreach (char ch in isbn)
             {
-                if (index < 13)
+                int num = int.Parse(Char.ToString(ch));
+                if (index < isbn.Length)
                 {
-                    int num = int.Parse(Char.ToString(ch));
-                    sum += ((index % 2) == 0) ? (num * 3) : num;
+                    if( isbn.Length == 13)
+                    {
+                        sum += ((index % 2) == 0) ? (num * 3) : num;
+                    }
+                    else
+                    {
+                        sum += (index * num);
+                    }
                 }
                 index++;
             }
             return sum;
         }   
-
-        public static int GetSumOfMultipliedDigitsByPosition(string isbn)
-        {
-            var index = 1;
-            var sum = 0;
-
-            foreach (char ch in isbn)
-            {
-                if (index < 10)
-                {
-                    int num = int.Parse(Char.ToString(ch));
-                    sum += (index * num);
-                }
-                index++;
-            }
-            return sum;
-        }
     }
     
 }
