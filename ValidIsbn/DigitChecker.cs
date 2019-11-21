@@ -5,15 +5,21 @@ namespace ValidIsbn
 {
     public static class DigitChecker
     {
-        public static bool HasValidCheckDigitForLengthThirteen(string isbn)
-        {   
-            if(isbn.Length == 10)
+        public static bool HasValidCheckDigit(string isbn)
+        {
+            string checkDigit;
+            char lastDigit;
+            if (isbn.Length == 13)
             {
-                return true;
+                checkDigit = (10 - (GetSumOfMultipliedDigits(isbn) % 10) % 10).ToString();
+                lastDigit = isbn[12];
             }
-            var checkDigit = (10 - (GetSumOfMultipliedDigits(isbn) % 10)) % 10;
-            var lastDigit = isbn[12];
-            return checkDigit.ToString() == lastDigit.ToString();
+            else
+            {
+                checkDigit = (GetSumOfMultipliedDigits(isbn) % 11).ToString();
+                lastDigit = isbn[9];
+            }
+            return checkDigit == lastDigit.ToString();
         }     
 
         public static int GetSumOfMultipliedDigits(string isbn)
