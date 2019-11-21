@@ -40,7 +40,7 @@ namespace ValidIsbnTest
         }
 
         [Fact]
-        public void ReturnsFalseForInvalidCheckDigitTen()
+        public void ReturnsFalseForInvalidCheckDigitIsbnTen()
         {
             var isbn = "0471606951";
             var expected = false;
@@ -49,6 +49,14 @@ namespace ValidIsbnTest
             actual.Should().Be(expected);
         }
 
+        [Fact]
+        public void ReturnsTrueForValidCheckDigitTen()
+        {
+            var isbn = "304013341X";
+            var expected = true;
+            var actual = DigitChecker.HasValidCheckDigit(isbn);
 
+            actual.Should().Be(expected);
+        }
     }
 }
