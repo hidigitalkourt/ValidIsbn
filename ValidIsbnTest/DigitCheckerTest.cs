@@ -49,10 +49,20 @@ namespace ValidIsbnTest
             actual.Should().Be(expected);
         }
 
+           [Fact]
+        public void ReturnsCheckDigitXForIsbnTen()
+        {
+            
+            var isbn = "824013341X";
+            var expected = "X";
+            var actual = DigitChecker.GetCheckDigitForIsbnTen(isbn);
+            actual.Should().Be(expected);
+        }
+
         [Fact]
         public void ReturnsTrueForValidCheckDigitTen()
         {
-            var isbn = "304013341X";
+            var isbn = "824013341X";
             var expected = true;
             var actual = DigitChecker.HasValidCheckDigit(isbn);
 
