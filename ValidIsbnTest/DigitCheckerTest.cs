@@ -19,11 +19,11 @@ namespace ValidIsbnTest
         }
 
         [Fact]
-        public void ReturnsFalseForInvalidCheckDigit()
+        public void ReturnsFalseForInvalidCheckDigitThirteen()
         {
             var isbn = "9780262134723";
             var expected = false;
-            var actual = DigitChecker.HasValidCheckDigitForLengthThirteen(isbn);
+            var actual = DigitChecker.HasValidCheckDigit(isbn);
 
             actual.Should().Be(expected);
         }
@@ -38,6 +38,17 @@ namespace ValidIsbnTest
             actual.Should().Be(expected);
 
         }
+
+        [Fact]
+        public void ReturnsFalseForInvalidCheckDigitTen()
+        {
+            var isbn = "0471606951";
+            var expected = false;
+            var actual = DigitChecker.HasValidCheckDigit(isbn);
+
+            actual.Should().Be(expected);
+        }
+
 
     }
 }
